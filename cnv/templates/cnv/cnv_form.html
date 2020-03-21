@@ -1,0 +1,56 @@
+{% extens 'base/base.html' %}
+
+
+{% block page_content %}
+<form action="POST" class="form-inline">
+	{% csrf_token %}
+	<div class="col-xl-6 col-md-6 mb-6">
+	  <div class="card border-left-success shadow h-100 py-2">
+	    <div class="card-body">
+	      <div class="row no-gutters align-items-center">
+	        <div class="col mr-2">
+	          <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
+	          	Nuevo Registro
+	          </div>
+	          <div class="dropdown-divider"></div>
+	          <div class = "row">
+	          	<div class="col-5">
+	          		<div class="input-group">
+	          			{{ form.dni }}	
+	          		</div>
+	          		<div class="input-group">
+	          			{{ form.nombre }}
+	          		</div>
+	          		<div class="input-group">
+	          			{{ form.apellido_paterno }}
+	          		</div>
+	          		<div class="input-group">
+	          			{{ form.apellido_materno }}
+	          		</div>
+	          		<div class="input-group">
+	          			{{ form.fecha_nac }}
+	          		</div>
+	          		<div class="input-group">
+	          			{{ form.celular }}
+	          		</div>
+	          	<div class="dropdown-divider"></div>
+	          	<div class="row">
+	          		<div class="col">
+	          			<button type="submit" class="btn btn-danger"><span class="fa fa-save"></span>Enviar</button>
+	          			<a href="{% url 'cnv:cnv_list' %}" class="btn btn-success"><span class="fa fa-undo"></span>Cancelar</button>        			
+	          		</div>
+	          	</div>
+	          	</div>
+	          </div>	          
+	        </div>	        
+	      </div>
+	    </div>
+	  </div>
+	</div>
+</form>
+
+{% endblock %}
+
+
+{% block js_page %} 
+{% endblock %}

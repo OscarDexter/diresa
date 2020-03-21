@@ -1,0 +1,97 @@
+{% extens 'base/base.html' %}
+
+{% block side_bar %} {% endblock %}
+{% block top_bar %} {% endblock %}
+{% block page_content %} {% endblock %}
+{% block footer %} {% endblock %}
+{% block login %} 
+ <div class="container">
+
+    <div class="card o-hidden border-0 shadow-lg my-5">
+      <div class="card-body p-0">
+        <!-- Nested Row within Card Body -->
+        <div class="row">
+          <div class="col-lg-5 d-none d-lg-block bg-register-image"></div>
+          <div class="col-lg-7">
+            <div class="p-5">
+              <div class="text-center">
+                <h1 class="h4 text-gray-900 mb-4">¿Estoy en riesgo de haber contraído el coronavirus COVID-19?</h1>
+              </div>
+	              <form method="POST" class="form-inline">
+	              	{% csrf_token %}
+	                <div class="form-group row">
+	                  <div class="col-sm-6 mb-3 mb-sm-0">
+	                  	<div class="input-group">
+	                    	<!--<input type="text" name="dni" maxlength ="100" class="form-control" required id="id_dni" placeholder="DNI">-->
+	                    	{{ form.dni }}
+	                	</div>
+	                  </div>
+	                   <div class="col-sm-6 mb-3 mb-sm-0">
+	                  	<div class="input-group">
+	                    	<!--<input type="text" name="dni" maxlength ="100" class="form-control" required id="id_dni" placeholder="DNI">-->
+	                    	{{ form.nombre }}
+	                	</div>
+	                  </div>
+	                   <div class="col-sm-6 mb-3 mb-sm-0">
+	                  	<div class="input-group">
+	                    	<!--<input type="text" name="dni" maxlength ="100" class="form-control" required id="id_dni" placeholder="DNI">-->
+	                    	{{ form.apellido_paterno }}
+	                	</div>
+	                  </div>
+	                   <div class="col-sm-6 mb-3 mb-sm-0">
+	                  	<div class="input-group">
+	                    	<!--<input type="text" name="dni" maxlength ="100" class="form-control" required id="id_dni" placeholder="DNI">-->
+	                    	{{ form.apellido_materno }}
+	                	</div>
+	                  </div>
+	                   <div class="col-sm-6 mb-3 mb-sm-0">
+	                  	<div class="input-group">
+	                    	<!--<input type="text" name="dni" maxlength ="100" class="form-control" required id="id_dni" placeholder="DNI">-->
+	                    	{{ form.fecha_nac }}
+	                	</div>
+	                  </div>
+	                   <div class="col-sm-6 mb-3 mb-sm-0">
+	                  	<div class="input-group">
+	                    	<!--<input type="text" name="dni" maxlength ="100" class="form-control" required id="id_dni" placeholder="DNI">-->
+	                    	{{ form.Sexo }}
+	                	</div>
+	                  </div>
+	                   <div class="col-sm-6 mb-3 mb-sm-0">
+	                  	<div class="input-group">
+	                    	<!--<input type="text" name="dni" maxlength ="100" class="form-control" required id="id_dni" placeholder="DNI">-->
+	                    	{{ form.celular }}
+	                	</div>
+	                  </div>
+	                               
+	                </div>
+	                <div class="dropdown-divider"></div>
+	                <div class="row">
+	                	<div class="col">
+	                		<button type="submit" class="btn btn-danger"><span class="fa fa-save"></span>Guardar</button>
+	                		<a href="{% url 'cnv:cnv_list' %}" class="btn btn_success"><samp class="fa fa-undo"></samp>Cancelar</a>
+	                	</div>
+	                	
+	                </div>
+	                <hr>
+	                <!--<a href="index.html" class="btn btn-google btn-user btn-block">
+	                  <i class="fab fa-google fa-fw"></i> Register with Google
+	                </a>
+	                <a href="index.html" class="btn btn-facebook btn-user btn-block">
+	                  <i class="fab fa-facebook-f fa-fw"></i> Register with Facebook
+	                </a>-->
+	              </form>
+              <hr>
+              <div class="text-center">
+                <a class="small" href="forgot-password.html">Forgot Password?</a>
+              </div>
+              <div class="text-center">
+                <a class="small" href="login.html">Already have an account? Login!</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+{% endblock %}
